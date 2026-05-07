@@ -1,0 +1,90 @@
+- name: "Axios"
+  type_filter: ["npm"]
+  pattern: "^axios$"
+  technology: "Axios"
+  category: "HTTP Client"
+  confidence: 95
+
+- name: "Dotenv"
+  type_filter: ["npm"]
+  pattern: "^dotenv$"
+  technology: "Dotenv"
+  category: "Configuration"
+  confidence: 90
+
+- name: "React"
+  type_filter: ["npm"]
+  pattern: "^react$"
+  technology: "React"
+  category: "Frontend Framework"
+  confidence: 95
+
+- name: "React DOM"
+  type_filter: ["npm"]
+  pattern: "^react-dom$"
+  technology: "React"
+  category: "Frontend Framework"
+  confidence: 95
+
+- name: "Jest"
+  type_filter: ["npm"]
+  pattern: "^jest$"
+  technology: "Jest"
+  category: "Testing"
+  confidence: 95
+
+- name: "Cypress"
+  type_filter: ["npm"]
+  pattern: "^cypress$"
+  technology: "Cypress"
+  category: "Testing"
+  confidence: 90
+
+- name: "Express"
+  type_filter: ["npm"]
+  pattern: "^express$"
+  technology: "Express"
+  category: "Web Framework"
+  confidence: 95
+
+- name: "Lodash"
+  type_filter: ["npm"]
+  pattern: "^lodash$"
+  technology: "Lodash"
+  category: "Utility Library"
+  confidence: 90
+
+- name: "Chalk"
+  type_filter: ["npm"]
+  pattern: "^chalk$"
+  technology: "Chalk"
+  category: "Terminal Styling"
+  confidence: 90
+
+- name: "TypeScript"
+  type_filter: ["npm"]
+  pattern: "^typescript$"
+  technology: "TypeScript"
+  category: "Language"
+  confidence: 95
+
+- name: "ESLint"
+  type_filter: ["npm"]
+  pattern: "^eslint$"
+  technology: "ESLint"
+  category: "Linting"
+  confidence: 90
+
+- name: "Webpack"
+  type_filter: ["npm"]
+  pattern: "^webpack$"
+  technology: "Webpack"
+  category: "Build Tool"
+  confidence: 90
+
+- name: "Vite"
+  type_filter: ["npm"]
+  pattern: "^vite$"
+  technology: "Vite"
+  category: "Build Tool"
+  confidence: 90
