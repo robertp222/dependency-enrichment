@@ -2,89 +2,89 @@
   type_filter: ["npm"]
   pattern: "^axios$"
   technology: "Axios"
-  category: "HTTP Client"
+  tags: ["integration", "http-client", "library"]
   confidence: 95
 
 - name: "Dotenv"
   type_filter: ["npm"]
   pattern: "^dotenv$"
   technology: "Dotenv"
-  category: "Configuration"
+  tags: ["devops", "configuration", "library"]
   confidence: 90
 
 - name: "React"
   type_filter: ["npm"]
   pattern: "^react$"
   technology: "React"
-  category: "Frontend Framework"
+  tags: ["frontend", "framework", "ui", "state-management"]
   confidence: 95
 
 - name: "React DOM"
   type_filter: ["npm"]
   pattern: "^react-dom$"
   technology: "React"
-  category: "Frontend Framework"
+  tags: ["frontend", "framework", "ui", "components"]
   confidence: 95
 
 - name: "Jest"
   type_filter: ["npm"]
   pattern: "^jest$"
   technology: "Jest"
-  category: "Testing"
+  tags: ["testing", "unit-testing", "test-runner", "tool"]
   confidence: 95
 
 - name: "Cypress"
   type_filter: ["npm"]
   pattern: "^cypress$"
   technology: "Cypress"
-  category: "Testing"
+  tags: ["testing", "e2e-testing", "test-runner", "tool"]
   confidence: 90
 
 - name: "Express"
   type_filter: ["npm"]
   pattern: "^express$"
   technology: "Express"
-  category: "Web Framework"
+  tags: ["backend", "framework", "web-server", "api", "rest"]
   confidence: 95
 
 - name: "Lodash"
   type_filter: ["npm"]
   pattern: "^lodash$"
   technology: "Lodash"
-  category: "Utility Library"
+  tags: ["productivity", "library", "text-processing", "date-time"]
   confidence: 90
 
 - name: "Chalk"
   type_filter: ["npm"]
   pattern: "^chalk$"
   technology: "Chalk"
-  category: "Terminal Styling"
+  tags: ["productivity", "cli", "library", "terminal"]
   confidence: 90
 
 - name: "TypeScript"
   type_filter: ["npm"]
   pattern: "^typescript$"
   technology: "TypeScript"
-  category: "Language"
+  tags: ["devops", "compiler", "transpiler", "tool"]
   confidence: 95
 
 - name: "ESLint"
   type_filter: ["npm"]
   pattern: "^eslint$"
   technology: "ESLint"
-  category: "Linting"
+  tags: ["devops", "linter", "tool", "productivity"]
   confidence: 90
 
 - name: "Webpack"
   type_filter: ["npm"]
   pattern: "^webpack$"
   technology: "Webpack"
-  category: "Build Tool"
+  tags: ["devops", "build-tool", "bundler", "tool"]
   confidence: 90
 
 - name: "Vite"
   type_filter: ["npm"]
   pattern: "^vite$"
   technology: "Vite"
-  category: "Build Tool"
+  tags: ["devops", "build-tool", "bundler", "tool"]
   confidence: 90

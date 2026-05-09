@@ -1,3 +1,4 @@
+import json
 import re
 import sqlite3
 from pathlib import Path
@@ -89,13 +90,19 @@ def load_rules(path):
         if isinstance(type_filter, str):
             type_filter = [type_filter]
 
+        tags = rule.get("tags")
+        if isinstance(tags, str):
+            tags = [tags]
+        if not isinstance(tags, list):
+            tags = []
+
         normalized.append(
             {
                 "name": rule.get("name", "unnamed_rule"),
                 "pattern": re.compile(pattern),
                 "type_filter": [t.strip() for t in type_filter] if type_filter else None,
                 "technology": rule.get("technology", ""),
-                "category": rule.get("category", ""),
+                "tags": tags,
                 "confidence": rule.get("confidence", None),
             }
         )
@@ -105,6 +112,11 @@ def load_rules(path):
 def ensure_columns(cursor):
     cursor.execute("PRAGMA table_info(library_catalog)")
     columns = {row[1] for row in cursor.fetchall()}
+
+    if "tags" not in columns:
+        cursor.execute(
+            "ALTER TABLE library_catalog ADD COLUMN tags TEXT DEFAULT '[]'"
+        )
 
     if "classification_source" not in columns:
         cursor.execute(
@@ -127,7 +139,7 @@ def classify_library(row, rules):
         if rule["pattern"].search(normalized_name):
             return {
                 "technology": rule["technology"],
-                "category": rule["category"],
+                "tags": rule["tags"],
                 "classification_source": rule["name"],
                 "confidence": rule["confidence"],
             }
@@ -160,11 +172,12 @@ def main():
         if not result:
             continue
 
+        tags_json = json.dumps(result["tags"])
         cursor.execute(
-            "UPDATE library_catalog SET technology = ?, category = ?, classification_source = ?, confidence = ? WHERE library_id = ?",
+            "UPDATE library_catalog SET technology = ?, tags = ?, classification_source = ?, confidence = ? WHERE library_id = ?",
             (
                 result["technology"],
-                result["category"],
+                tags_json,
                 result["classification_source"],
                 result["confidence"],
                 row[0],

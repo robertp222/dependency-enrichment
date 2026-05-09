@@ -114,7 +114,7 @@ def should_include_row(enrichment_status, args):
 def fetch_npm_metadata(package_name):
     safe_name = quote(package_name, safe="")
     url = f"{REGISTRY_URL}/{safe_name}"
-    request = Request(url, headers={"Accept": "application/vnd.npm.install-v1+json"})
+    request = Request(url)
 
     try:
         with urlopen(request, timeout=20) as response:
@@ -165,8 +165,20 @@ def build_metadata(package_name, npm_data):
         latest = dist_tags.get("latest", "")
 
     repository_url = extract_repository_url(npm_data.get("repository"))
+
+    # Get description from main level
+    description = str(npm_data.get("description", "") or "").strip()
+
+    # If empty, try from latest version
+    if not description and latest:
+        versions = npm_data.get("versions", {})
+        if isinstance(versions, dict) and latest in versions:
+            version_data = versions[latest]
+            if isinstance(version_data, dict):
+                description = str(version_data.get("description", "") or "").strip()
+
     return {
-        "description": str(npm_data.get("description", "") or "").strip(),
+        "description": description,
         "homepage": str(npm_data.get("homepage", "") or "").strip(),
         "repository_url": repository_url,
         "keywords": normalize_keywords(npm_data.get("keywords")),
@@ -248,6 +260,10 @@ def main():
             npm_data = fetch_npm_metadata(normalized_name)
             metadata = build_metadata(normalized_name, npm_data)
             timestamp = datetime.datetime.utcnow().isoformat()
+
+            # Log for first few records
+            if index <= 5 and metadata is not None:
+                print(f"Package {normalized_name}: description='{metadata['description']}'")
 
             if metadata is None:
                 cursor.execute(

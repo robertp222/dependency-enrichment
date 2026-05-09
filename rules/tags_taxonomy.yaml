@@ -1,0 +1,160 @@
+tag_groups:
+
+  domain:
+    - frontend
+    - backend
+    - data
+    - ai
+    - testing
+    - devops
+    - security
+    - observability
+    - integration
+    - infrastructure
+    - productivity
+    - mobile
+    - desktop
+
+  technology-type:
+    - framework
+    - library
+    - sdk
+    - tool
+    - runtime
+    - platform
+    - plugin
+    - adapter
+    - connector
+    - client
+    - server
+    - middleware
+
+  frontend:
+    - ui
+    - components
+    - styling
+    - css
+    - state-management
+    - routing
+    - forms
+    - charts
+    - visualization
+    - i18n
+    - accessibility
+
+  backend:
+    - api
+    - rest
+    - graphql
+    - rpc
+    - web-server
+    - application-server
+    - microservices
+    - validation
+    - serialization
+    - configuration
+    - dependency-injection
+
+  data:
+    - database
+    - database-driver
+    - orm
+    - query-builder
+    - migration
+    - caching
+    - search
+    - etl
+    - data-processing
+    - json
+    - xml
+    - csv
+
+  ai:
+    - llm
+    - embeddings
+    - vector-database
+    - rag
+    - prompting
+    - agents
+    - ml
+    - nlp
+    - computer-vision
+    - model-serving
+
+  testing:
+    - unit-testing
+    - integration-testing
+    - e2e-testing
+    - test-runner
+    - assertions
+    - mocking
+    - test-automation
+    - performance-testing
+    - contract-testing
+
+  devops:
+    - build-tool
+    - bundler
+    - transpiler
+    - compiler
+    - linter
+    - formatter
+    - package-manager
+    - ci-cd
+    - release
+    - deployment
+    - containerization
+    - iac
+
+  security:
+    - authentication
+    - authorization
+    - identity
+    - oauth
+    - jwt
+    - cryptography
+    - secrets
+    - security-scanning
+    - vulnerability-scanning
+    - license-scanning
+
+  observability:
+    - logging
+    - monitoring
+    - metrics
+    - tracing
+    - alerting
+    - apm
+
+  integration:
+    - messaging
+    - event-streaming
+    - queue
+    - pubsub
+    - api-gateway
+    - service-mesh
+    - http-client
+
+  infrastructure:
+    - cloud
+    - aws
+    - azure
+    - gcp
+    - kubernetes
+    - docker
+    - serverless
+    - networking
+    - storage
+
+  productivity:
+    - cli
+    - terminal
+    - debugging
+    - documentation
+    - code-generation
+    - parsing
+    - date-time
+    - math
+    - text-processing
+    - compression
+    - encryption
